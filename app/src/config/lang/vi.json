@@ -1,0 +1,131 @@
+{
+      
+        "common" : "Chọn ngôn ngữ",
+        "language" : "Ngôn ngữ",
+        "or" : "Hoặc",
+        "type": {
+            "en": "Tiếng Anh",
+            "vi": "Tiếng Việt"
+        },
+        "sign_in" : {
+            "title" : "Đăng ký bằng",
+            "status": "Bạn chưa có tài khoản ?",
+            "action": "Đăng ký"
+        },
+        "sign_up" : {
+            "input": {
+                "name" : "Họ và tên",
+                "email" : "Email",
+                "password" : "Mật khẩu",
+                "confirm_password" : "Nhập lại mật khẩu",
+                "register" : "Tạo tài khoản",
+                "confirm_statement" : "Tôi đồng ý với tất cả điều khoản"
+            },
+            "title" : "Đăng ký",
+            "action" : "Đã có tài khoản ?",
+            "status" : "Đăng nhập",
+            "validate" : {
+                "name" : {
+                    "required" : "Tên không được để trống",
+                    "minlength" : "Tên phải lớn hơn 3 ký tự",
+                    "maxlength" : "tên không được lớn hơn 20 ký tự"
+                },
+                "email" : {
+                    "required" : "Email không được để trống",
+                    "email" : "Email không hợp lệ"
+                },
+                "password" : {
+                    "required" : "Mật khẩu không được để trống",
+                    "minlength" : "Mật khẩu phải lớn hơn 6 ký tự",
+                    "maxlength" : "Mật khẩu phải nhỏ hơn 20 ký tự"
+                },
+                "confirm_password" : {
+                    "required" : "Mật khẩu xác nhận không được để trống",
+                    "minlength" : "Mật khẩu xác nhận phải lớn hơn 6 ký tự",
+                    "maxlength" : "Mật khẩu xác nhận phải nhỏ hơn 20 ký tự",
+                    "not_match" : "Mật khẩu xác nhận không khớp"
+                }
+            },
+            "alert" : {
+                "title" : "Thông báo",
+                "success" : "Tạo tài khoản thành công, chúng tôi sẽ chuyển hướng bạn đến đăng nhập",
+                "error" : "Có một lỗi xảy ra, tạo tài khoản thất bại"
+            }
+        },
+        "login" : {
+            "title" : "Đăng nhập",
+            "username" : "Tên đăng nhập",
+            "password" : "Mật khẩu",
+            "error" : {
+                "email" :{
+                    "required" : "Vui lòng nhập email",
+                    "email" : "Email không đúng định dạng"
+                },
+                "password" :{
+                    "required" : "Vui lòng nhập mật khẩu",
+                    "minlength" : "Mật khẩu phải có ít nhất 6 ký tự"
+                }
+            },
+            "login" : "Đăng nhập",
+            "logout" : "Đăng xuất",
+            "forgot" : "Quên mật khẩu?",
+            "rememberMe" : "Nhớ tôi",
+            "forgotPassword": "Quên mật khẩu",
+            "buttons": {
+                "login" : "Đăng nhập",
+                "register" : "Đăng ký"
+            }
+        },
+        "admin_dashboard" : {
+            "menu" : {
+                "dashboard" : "Bảng điều khiển",
+                "users" : "Người dùng",
+                "roles" : "Vai trò",
+                "permissions" : "Quyền",
+                "settings" : "Cài đặt",
+                "profile" : "Hồ sơ",
+                "logout" : "Đăng xuất",
+                "manager" : "Quản lý dữ liệu"
+            },
+            "crud": {
+                "create" : "Tạo mới",
+                "edit" : "Chỉnh sửa",
+                "delete" : "Xóa",
+                "show" : "Xem",
+                "list" : "Danh sách",
+                "search" : "Tìm kiếm",
+                "filter" : "Lọc",
+                "reset" : "Làm mới",
+                "export" : "Xuất",
+                "import" : "Nhập",
+                "print" : "In",
+                "save" : "Lưu",
+                "close" : "Đóng",
+                "cancel" : "Hủy",
+                "confirm" : "Xác nhận",
+                "back" : "Quay lại",
+                "action" : "Thao tác",
+                "select" : "Chọn",
+                "choose" : "Chọn",
+                "choose_file" : "Chọn tệp",
+                "choose_image" : "Chọn ảnh",
+                "choose_file_or_image" : "Chọn tệp hoặc ảnh"
+            },"notify" :{
+                "alert" : {
+                    "title" : "Thông báo",
+                    "success" : "Thành công",
+                    "error" : "Có lỗi xảy ra"
+                },
+                "menu" : {
+                    "content" : {
+                        "new" : "Thông báo mới",
+                        "delete" :"Xóa thông báo",
+                        "delete_all" : "Xóa tất cả thông báo",
+                        "mark_all_as_read" : "Đánh dấu tất cả đã đọc",
+                        "mark_as_read" : "Đánh dấu đã đọc"
+                    }
+                }
+            }
+        }
+    
+}

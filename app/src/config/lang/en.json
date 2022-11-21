@@ -1,0 +1,131 @@
+{
+        "common" : "Choose language",
+        "language" : "language",
+        "or" : "or",
+        "type" : {
+            "en" : "English",
+            "vi" : "Vietnamese"
+        },
+        "sign_in" : {
+            "title" : "Sign in with",
+            "status" : "Don't have an account ?",
+            "action" : "Register"
+        },
+        "sign_up" : {
+            "input": {
+                "name" : "Name",
+                "email" : "Email",
+                "password" : "Password",
+                "confirm_password" : "Confirm password",
+                "register" : "Register",
+                "confirm_statement" : "I agree all statements"
+            },
+            "title" : "Sign up ",
+            "action" : "Already have an account ?",
+            "status" : "Sign in",
+            "validate" : {
+                "name" : {
+                    "required" : "Name is required",
+                    "minlength" : "Name must be at least 3 characters long",
+                    "maxlength" : "Name cannot be longer than 20 characters"
+                },
+                "email" : {
+                    "required" : "Email is required",
+                    "email" : "Email is invalid"
+                },
+                "password" : {
+                    "required" : "Password is required",
+                    "minlength" : "Password must be at least 6 characters long",
+                    "maxlength" : "Password cannot be longer than 20 characters"
+                },
+                "confirm_password" : {
+                    "required" : "Confirm password is required",
+                    "minlength" : "Confirm password must be at least 6 characters long",
+                    "maxlength" : "Confirm password cannot be longer than 20 characters",
+                    "not_match" : "Confirm password does not match"
+                }
+            },
+            "alert" : {
+                "title" : "Notification",
+                "success" : "Successful account creation, we will redirect you to the login page",
+                "error" : "Register failed"
+            }
+        },
+        "login" : {
+            "title" : "Login",
+            "email": "Email",
+            "username" : "Username",
+            "password" : "Password",
+            "error" : {
+                "email" :{
+                    "required" : "Email is required",
+                    "email" : "Email is invalid"
+                },
+                "password" : {
+                    "required" : "Password is required",
+                    "minlength" : "Password must be at least 6 characters"
+                }
+            },
+            "login" : "Login",
+            "logout" : "Logout",
+            "forgot" : "Forgot password ?",
+            "rememberMe": "Remember me",
+            "forgotPassword": "Forgot password",
+            "buttons": {
+                "login" : "Login",
+                "register" : "Register"
+            }
+        },
+        "admin_dashboard" : {
+            "menu" : {
+                "dashboard" : "Dashboard",
+                "users" : "Users",
+                "roles" : "Roles",
+                "permissions" : "Permissions",
+                "settings" : "Settings",
+                "profile" : "Profile",
+                "logout" : "Logout",
+                "manager" : "Data Management"
+            },
+            "crud": {
+                "create" : "Create",
+                "edit" : "Edit",
+                "delete" : "Delete",
+                "show" : "Show",
+                "list" : "List",
+                "search" : "Search",
+                "filter" : "Filter",
+                "reset" : "Reset",
+                "export" : "Export",
+                "import" : "Import",
+                "print" : "Print",
+                "save" : "Save",
+                "close" : "Close",
+                "cancel" : "Cancel",
+                "confirm" : "Confirm",
+                "back" : "Back",
+                "action" : "Action",
+                "select" : "Select",
+                "choose" : "Choose",
+                "choose_file" : "Choose file",
+                "choose_image" : "Choose image",
+                "choose_file_or_image" : "Choose file or image"
+            },"notify" :{
+                "alert" : {
+                    "title" : "Notification",
+                    "success" : "Successful",
+                    "error" : "Error"
+                },
+                "menu" : {
+                    "content" : {
+                        "new" : "New Notification",
+                        "delete" :"Delete Notification",
+                        "delete_all" : "Delete all Notification",
+                        "mark_all_as_read" : "Mark all as read",
+                        "mark_as_read" : "Mark as read"
+                    }
+                }
+            }
+        }
+    
+}

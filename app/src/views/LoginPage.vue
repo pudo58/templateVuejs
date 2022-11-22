@@ -41,11 +41,11 @@
           
                     <!-- Email input -->
                     <div class="form-floating mb-4">
-                      <input type="text" id="form3Example3" class="form-control" :class="{'error': validate.username.status}"
-                        placeholder="Enter a valid email address" v-model="user.username"/>
+                      <input type="text" id="form3Example3" class="form-control" :class="{'error': validate.email.status}"
+                        placeholder="Enter a valid email address" v-model="user.email"/>
                       <label class="form-label" for="form3Example3"> {{$t('login.email')}} </label>
-                      <small v-show="validate.username.status">{{ $t('login.error.email.required') }}</small>
-                      <small v-show="validate.username.invalid">{{ $t('login.error.email.email') }}</small>
+                      <small v-show="validate.email.status">{{ $t('login.error.email.required') }}</small>
+                      <small v-show="validate.email.invalid">{{ $t('login.error.email.email') }}</small>
                     </div>
           
                     <!-- Password input -->
@@ -116,68 +116,70 @@ export default {
     },
     data : ()=>({
         user : {
-            username : "",
+            email : "",
             password : ""
         },showSpinner : false,
         validate : {
-          username : {
-          message : "",
-          status : false,
-          invalid : false
+          email : {
+            message : "",
+            status : false,
+            invalid : false
          },
          password : {
-          message : "",
-          status : false,
-          invalid : false
+            message : "",
+            status : false,
+            invalid : false
          }
         }
     }),
     methods : {
         login(){
           this.showSpinner = true;
-          this.validate.username.status = false;
+          this.validate.email.status = false;
           this.validate.password.status = false;
-          this.validate.username.invalid = false;
+          this.validate.email.invalid = false;
           this.validate.password.invalid = false;
-          if(this.user.username == ""){
-            this.validate.username.status = true;
+          if(this.user.email == ""){
+            this.validate.email.status = true;
             return;
           }
           else if(this.user.password == ""){
             this.validate.password.status = true;
             return;
           }     
-          else if(this.user.password.length < 6){
-            this.validate.password.invalid = true
-            return ;
-          }
+          // else if(this.user.password.length < 6){
+          //   this.validate.password.invalid = true
+          //   return ;
+          // }
           
-            axios.post("/user/login", this.user)
+            axios.post("/login", this.user)
             .then(res => {
-              console.log(res.data)
                 if(res.data.status == 200){
                   localStorage.setItem("data", res.data.data);
                   setTimeout(() => {
                     this.showSpinner = false;
-                      // set data here
-                      this.$router.push("/admin/dashboard");
+                     alert("Login Success");
+                     
                   }, 2000);
+                  this.$router.push("/admin/dashboard");
                 
-                }else 
-                setTimeout(() => {
+                }else {
+                  setTimeout(() => {
                     this.showSpinner = false;
                       // set data here
                       //this.$router.push("/home");
-                  }, 2000);
-                
+                      alert("Login failed");
+                  }, 1000);
+                }
             })
-            .catch(err => {
+            .catch(async err => {
               err.data
-              setTimeout(() => {
-                this.showSpinner = false;
+               setTimeout(() => {
+                 this.showSpinner =  false;
                     // set error here 
                    // this.$router.push("/home");
                 }, 2000);
+                alert("Login failed");
                 
             })
         }

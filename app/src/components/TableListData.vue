@@ -1,14 +1,9 @@
 <template>
     <div class="container">
         <div class="table table-responsive">
-            <table>
-                <thead>
-<!-- Header in table -->
-                </thead>
-                <tbody>
-                    <b-tbody :items="data"></b-tbody>
-                </tbody>
-            </table>
+           <b-table striped hover
+            :items="data">
+           </b-table>
         </div>
     </div>
 </template>

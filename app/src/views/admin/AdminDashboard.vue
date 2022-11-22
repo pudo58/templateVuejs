@@ -10,10 +10,10 @@
               <path d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.458-.79z"/>
               <path d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.51 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z"/>
             </svg>
-            <span data-bs-toggle="collapse" href="#allTable" role="button" aria-expanded="false" aria-controls="allTable" class="text-danger"
+            <span @click="showMenu=!showMenu" href="#allTable" role="button" aria-expanded="false" aria-controls="allTable" class="text-danger"
              > {{$t('admin_dashboard.menu.manager')}}</span>
           </a>
-          <div class="collapse" id="allTable">
+          <div class="collapse" :class="{'hidden':showMenu == false,'show':showMenu==true}" id="allTable">
             <div class="text-center">
             <a href="#" class="list-group-item list-group-flush p-1 m-1" v-for="item,index in allTableData" :key="index">
                 <div class="row" v-bind:title="item.name">
@@ -23,8 +23,8 @@
                     </svg>
                   </div>
                   <div class="col-3">
-                    <span class="h8">
-                      Table_{{item}}
+                    <span class="h8" @click="loadData(item)">
+                      {{item}}
                     </span>
                   </div>
                 </div>
@@ -100,7 +100,7 @@
           <!-- Icon dropdown -->
           <li class="nav-item dropdown" v-bind:title="$t('common')">
             <button v-bind:title="$t('common')" class="btn btn-secondary dropdown-toggle btn-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              {{ $t('common') }}
+              {{ $t('common')}}
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
               <li><a class="dropdown-item" @click.prevent="changeLanguage('en')"><img src="../../assets/images/icon/us.png" width="30"> {{ $t('type.en')}}</a></li>
@@ -149,6 +149,7 @@
 </template>
 <script>
 import TableListDataVue from '@/components/TableListData.vue';
+import axios from 'axios';
 export default{
   name : "AdminDashboard",
   components :{
@@ -158,24 +159,22 @@ export default{
       return {
         searchData : '',
         list : [
-          {
-            id : 1,
-            name : 'Nguyen Van A',
-            email : ''
-          }
         ],
         allTableData : [
-          "User","Roles","Member","Token"
-        ]
+         "user","category","course","role",
+        ],showMenu : false,
+        tableNameSelect: 'user' 
       }
   },
   created(){
-    this.loadData();
+    this.loadData(this.tableNameSelect);
    // dataTable.getData('/user/get','User');
   },
   methods : {
-    async loadData(){
-     
+    async loadData(tableName){
+      axios.get("/"+tableName+"/get").then(res => {
+        this.list = res.data;
+      })
     },
     changeLanguage(lang){
       this.$i18n.locale = lang;

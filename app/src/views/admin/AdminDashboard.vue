@@ -161,7 +161,7 @@ export default{
         list : [
         ],
         allTableData : [
-         "user","category","course","role",
+         "user","category","course","role","admin","category","category-attribute"
         ],showMenu : false,
         tableNameSelect: 'user' 
       }
